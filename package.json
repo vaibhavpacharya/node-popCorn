@@ -1,0 +1,22 @@
+{
+  "name": "popcorn",
+  "version": "1.0.0",
+  "description": "Simple Movie,TV App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Vaibhav Acharya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0"
+  }
+}

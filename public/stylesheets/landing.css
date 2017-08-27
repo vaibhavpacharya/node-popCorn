@@ -1,0 +1,91 @@
+body{
+}
+
+.slideshow {
+  background: url('http://s3-us-west-2.amazonaws.com/techvibes/wp-content/uploads/2017/04/24135159/Netflix-Background.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0.79;
+}
+
+
+/* when < 480 change to block item */
+.logo {
+  padding: 4px 20px 0px 15px;
+  color: red;
+  font-family: 'Oswald', sans-serif;
+  font-size: 4.0rem;
+  display: inline;
+  position: relative;
+  line-height: 285px;
+  margin-left: 38px;
+  z-index: 1;
+  font-weight: 900;
+}
+
+.fa-film{
+  padding-right: 8px;
+  z-index: 1;
+  position: relative;
+}
+
+.text{
+  position: relative;
+  z-index: 13;
+  font-size: 1.8vw;
+  left: 0;
+  margin: 0 3%;
+  width: 94%;
+}
+
+.title{
+  color: #fff;
+  margin: 0 0 0.2em;
+  line-height: 1.1em;
+  font-weight: 700;
+  text-shadow: 1px 1px 10px #000;
+  font-size: 3em;
+}
+
+.underscore{
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.underscore span{
+  padding-right: 30px;
+}
+
+.btn-red{
+  color: #fff;
+  background-color: #e50914;
+  box-shadow: 0 1px 0 rgba(0,0,0,.45);
+  position: relative;
+  z-index: 1;
+  margin-left: 38px;
+  cursor: pointer;
+  line-height: 1em;
+  display: inline-block;
+  border-radius: 2px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  box-sizing: border-box;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+button{
+  overflow: visible;
+  text-transform: none;
+}

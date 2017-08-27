@@ -1,0 +1,296 @@
+html, body {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #000000;
+  background-size: cover;
+  margin-top: 0px;
+  z-index: 1;
+}
+
+.slideshow {
+  /*background: url('http://s3-us-west-2.amazonaws.com/techvibes/wp-content/uploads/2017/04/24135159/Netflix-Background.jpg');*/
+  background-image: url(https://source.unsplash.com/KZa4fREZoKk);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0.39;
+}
+
+/* when < 480 change to block item */
+.logo {
+  background: red;
+  border: 3px solid red;
+  padding: 4px 20px 0px 15px;
+  margin-top: 0px;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 4.0rem;
+  display: inline;
+}
+
+.top-nav {
+  float: left;
+  margin-top: 0px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+
+li a {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 17px 15px;
+  height: 60px;
+  color: #fff;
+  text-decoration: none;
+  background: #333;
+}
+
+li a:hover {
+  background: #222;
+}
+
+.active-nav-link {
+  font-weight: bold;
+}
+
+.search {
+  float: right;
+  margin: 15px;
+}
+
+.search-btn {
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #111;
+  padding: 7px 12px 6px 13px;
+  margin: 1px;
+  font-size: 1em;
+  color: #fff;
+  background: #222;
+  text-decoration: none;
+}
+
+.search-btn:hover {
+  background: #1d1d1d;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.thumbnail img{
+  width: 100%;
+  height: 375px;
+  border-radius: 30px;
+}
+
+.thumbnail{
+  padding: 0;
+  border-style: none;
+  display: block;
+  background-color: inherit;
+}
+
+.row{
+  margin-top: 90px;
+}
+
+#content{
+  height: auto;
+  background: #bbb;
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  margin-top: 80px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#movie-main-summary {
+  width: 55%;
+  float: right;
+  height: 99%;
+  /*border: 1px solid black;*/
+  margin-right: 10px;
+}
+
+#movie-summary-img {
+  max-height: 360px;
+  max-width: 85%;
+  margin-left: 0;
+}
+
+.movie-video{
+width: 40%;
+float: left;
+}
+
+#movie-summary-title {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 25px;
+  float: left;
+}
+
+#summary-top {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+
+#summary-bottom {
+  font-size: 1.1em;
+  width: 100%;
+}
+
+.fa-star {
+  font-size: 70px;
+  color: #fbc02d;
+}
+
+.fa-stack-1x {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 70px;
+  margin-left: 10px;
+  font-family: 'Open Sans Condensed';
+}
+
+.votes {
+  font-size: 16px;
+  margin-left: 70px;
+  margin-top: 10px;
+  width: 100px;
+  font-family: 'Open Sans Condensed';
+}
+
+.youtube {
+  margin: 10px;
+  width: 100%;
+  /*width: 480px;*/
+  height: 320px;
+  border: 0;
+  background: #999 url(https://www.openmerchantaccount.com/img/novideo.png) no-repeat center;
+}
+
+.fa-film{
+  padding-right: 8px;
+}
+
+.caption_info{
+  padding-top: 12px;
+  padding-right: 150px;
+  float: left;
+  color: #B22222 !important;
+}
+
+.caption h4{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow:hidden !important;
+  display:inline-block;
+  width: 196px;
+  color: #ffffff;
+}
+
+hr{
+  margin-top: 70px;
+  display: block;
+  margin-bottom: 0;
+  border-top: 2px solid #eee
+}
+
+.fa-star{
+  font-size: 40px;
+}
+
+.star{
+  height: 50px;
+  width: 60px;
+  margin-top: -36px;
+  margin-left: 155px;
+}
+
+#vote_avg{
+  font-size: 15px;
+  color: #FFD700 !important;
+}
+
+.vote{
+  width: 10%;
+  margin-left: 156px;
+  margin-top: -30px;
+  color: #FFD700 !important;
+}
+
+.col-lg-5{
+  padding-left: 0;
+}
+
+.col-lg-7{
+  margin-top: 15px;
+}
+
+.col-lg-7 p{
+  color: #ffffff;
+}
+
+#slick-slider{
+  position: absolute;
+  top: 900px;
+  margin-bottom: 20px;
+}
+
+.popularity{
+  background: url(http://kineticbusinesssolutions.com/wp-content/uploads/2016/05/digital-marketing.png) no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.inline{
+  padding: 0 0.5em 0 0;
+  display: inline;
+}
+
+.credit-item{
+  float: left;
+  padding-bottom: 5px;
+}
+
+#recommendations{
+  margin-top: 575px;
+}
+
+.slick-prev:before, .slick-next:before{
+    color:red;
+}
