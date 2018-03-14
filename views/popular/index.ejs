@@ -1,38 +1,38 @@
 <% include ../partials/header %>
 
-<div class="slideshow"></div>
-<div id="header">
-  <div class="top-nav">
+  <div class="slideshow"></div>
+  <div id="header">
+    <div class="top-nav">
       <span class="logo"> <a href="/"><i class="fa fa-film"></i>Pop<strong>Corn</strong></a></span>
-  </div>
+    </div>
     <div id="nav-links" class="top-nav">
       <ul>
-      <li class="currently_playing"><a href="/nowplaying">Currently Playing</a></li>
-      <li class="popular active-nav-link"><a href="/popular">Popular</a></li>
-      <li class="top_rated"><a href="/toprated">Top Rated</a></li>
-      <li class="upcoming"><a href="/upcoming">Upcoming</a></li>
+        <li class="currently_playing"><a href="/nowplaying">Currently Playing</a></li>
+        <li class="popular active-nav-link"><a href="/popular">Popular</a></li>
+        <li class="top_rated"><a href="/toprated">Top Rated</a></li>
+        <li class="upcoming"><a href="/upcoming">Upcoming</a></li>
       </ul>
     </div>
-      <div class="search">
-        <input type="text" placeholder="Search Movie">
-      </div>
-</div>
+    <div class="search">
+      <input type="text" placeholder="Search Movie">
+    </div>
+  </div>
 
-<div class="row text-center" style=display:flex;flex-wrap:wrap;>
+  <div class="row text-center" style=display:flex;flex-wrap:wrap;>
     <% movieData.results.forEach(function(movie){ %>
       <div class="col-md-3 col-sm-6">
         <div class="thumbnail">
-          <% movie.poster_path = 'https://image.tmdb.org/t/p/w396' +movie.poster_path %>
-          <img src= "<%= movie.poster_path %>">
-          <div class="caption">
-            <h4><%= movie.title %></h4>
-          </div>
-          <a class="btn-lg btn-primary" href="/popular/<%= movie.title %>">More Info</a>
+          <% movie.poster_path = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2' +movie.poster_path %>
+            <img src="<%= movie.poster_path %>">
+            <div class="caption">
+              <h4><%= movie.title %></h4>
+            </div>
+            <a class="btn-lg btn-primary" href="/popular/<%= movie.title %>">More Info</a>
         </div>
       </div>
-    <% }); %>
-</div>
-</div>
+      <% }); %>
+  </div>
+  </div>
 
 
-<% include ../partials/footer %>
+  <% include ../partials/footer %>
