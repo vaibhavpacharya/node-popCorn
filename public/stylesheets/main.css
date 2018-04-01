@@ -1,27 +1,21 @@
+ @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800');
 html, body {
   top: 0;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
-#header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: #000000;
-  background-size: cover;
-  margin-top: 0px;
-  z-index: 1;
+a:focus, a:hover {
+	color: #ffffff;
+  text-decoration: none;
 }
+
 
 .slideshow {
-  /*background: url('http://s3-us-west-2.amazonaws.com/techvibes/wp-content/uploads/2017/04/24135159/Netflix-Background.jpg');*/
-  background-image: url(https://source.unsplash.com/KZa4fREZoKk);
+  background-image: url(https://source.unsplash.com/0M5URHZ_f3k);
   background-size: cover;
   background-position: center;
   position: fixed;
@@ -33,83 +27,88 @@ html, body {
   list-style: none;
   margin: 0;
   padding: 0;
-  opacity: 0.39;
+  opacity: 0.99;
 }
 
-/* when < 480 change to block item */
-.logo {
-  background: red;
-  border: 3px solid red;
-  padding: 4px 20px 0px 15px;
-  margin-top: 0px;
-  color: #fff;
-  font-family: 'Oswald', sans-serif;
-  font-size: 4.0rem;
-  display: inline;
+.navbar{
+  min-height: 80px;
+  margin-top: 20px;
+  min-width: 50vh;
+  background: #081c24;
+  border-radius: 10px;
 }
 
-.top-nav {
-  float: left;
-  margin-top: 0px;
+.navbar-default .navbar-brand {
+  background: #e50914;
+  color: #ffffff;
+  padding: 1em;
+  font-size: 4vh;
+  min-height: 80px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 15px;
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand a:hover {
+  background: #e50914;
+  color: #ffffff;
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-li {
-  display: inline;
-  margin: 0;
-  padding: 0;
+.navbar .navbar-nav {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
 }
 
-
-li a {
-  font-size: 1.2em;
-  margin: 0;
-  padding: 17px 15px;
-  height: 60px;
-  color: #fff;
-  text-decoration: none;
-  background: #333;
+.navbar .navbar-nav li {
+    float: none;
+    display: inline-block;
 }
 
-li a:hover {
-  background: #222;
+.navbar .navbar-nav li a {
+  font-size: 2vh;
+  color: #ffffff;
 }
 
-.active-nav-link {
+.navbar .navbar-nav li a:hover {
+  color: #e50914;
+}
+
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
   font-weight: bold;
+  background-color: #e50914;
+  color: #ffffff;
 }
 
-.search {
-  float: right;
-  margin: 15px;
-}
-
-.search-btn {
-  border-right: 2px solid #111;
-  border-bottom: 2px solid #111;
-  padding: 7px 12px 6px 13px;
-  margin: 1px;
-  font-size: 1em;
-  color: #fff;
-  background: #222;
-  text-decoration: none;
-}
-
-.search-btn:hover {
-  background: #1d1d1d;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
+.fa-play-circle, .fa-star, .fa-arrow-alt-circle-up, .fa-calendar-alt{
+  padding-right: 6px;
+  font-size: 2em;
+  color: #ffffff;
 }
 
 .thumbnail img{
   width: 100%;
   height: 375px;
   border-radius: 30px;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+
+.thumbnail img:hover{
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .thumbnail{

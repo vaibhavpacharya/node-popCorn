@@ -1,37 +1,63 @@
 <% include ../partials/header %>
 
   <div class="slideshow"></div>
-  <div id="header">
-    <div class="top-nav">
-      <span class="logo"> <a href="/"><i class="fa fa-film"></i>Pop<strong>Corn</strong></a></span>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="/">popcorn</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/nowplaying">
+              <i class="far fa-play-circle"></i>Currently Playing
+            </a>
+          </li>
+          <li>
+            <a href="/popular">
+              <i class="far fa-star"></i>Popular
+            </a>
+          </li>
+          <li class="active">
+            <a href="/toprated">
+              <i class="far fa-arrow-alt-circle-up"></i>Top Rated
+            </a>
+          </li>
+          <li>
+            <a href="/upcoming">
+              <i class="far fa-calendar-alt"></i>Upcoming
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
-    <div id="nav-links" class="top-nav">
-      <ul>
-        <li class="currently_playing"><a href="/nowplaying">Currently Playing</a></li>
-        <li class="popular"><a href="/popular">Popular</a></li>
-        <li class="top_rated active-nav-link"><a href="/toprated">Top Rated</a></li>
-        <li class="upcoming"><a href="/upcoming">Upcoming</a></li>
-      </ul>
-    </div>
-    <div class="search">
-      <input type="text" placeholder="Search Movie">
-    </div>
-  </div>
+    <!-- /.container-fluid -->
+  </nav>
 
   <div class="row text-center" style=display:flex;flex-wrap:wrap;>
     <% movieData.results.forEach(function(movie){ %>
       <div class="col-md-3 col-sm-6">
         <div class="thumbnail">
-          <% movie.poster_path = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2' +movie.poster_path %>
+          <% movie.poster_path = 'https://image.tmdb.org/t/p/w370_and_h556_bestv2' +movie.poster_path %>
+            <a href="/nowplaying/<%= movie.title %>">
             <img src="<%= movie.poster_path %>">
+          </a>
             <div class="caption">
               <h4><%= movie.title %></h4>
             </div>
-            <a class="btn-lg btn-primary" href="/toprated/<%= movie.title %>">More Info</a>
         </div>
       </div>
       <% }); %>
-  </div>
   </div>
 
   <% include ../partials/footer %>

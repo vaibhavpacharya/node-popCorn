@@ -22,6 +22,6 @@ var express     = require("express"),
     app.use("/toprated", topratedRoutes);
     app.use("/upcoming", upcomingRoutes);
 
-    app.listen(process.env.PORT,function(){
+    app.listen(process.env.PORT || 8080,function(){
       console.log("The Popcorn App server has started!");
 });
