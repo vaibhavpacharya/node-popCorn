@@ -1,4 +1,6 @@
- @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html, body {
   top: 0;
   width: 100%;
@@ -28,6 +30,20 @@ a:focus, a:hover {
   margin: 0;
   padding: 0;
   opacity: 0.99;
+}
+
+#postertest{
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar{
@@ -147,6 +163,239 @@ a:focus, a:hover {
   max-height: 360px;
   max-width: 85%;
   margin-left: 0;
+}
+
+.col-xs-12, .col-xs-6{
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.meta-data-container {
+	padding: 15px;
+	color: #fafafa;
+}
+@media (min-width:544px){
+  .meta-data-container {
+  	padding: 25px;
+  }
+}
+
+@media (min-width:768px) {
+  .meta-data-container {
+  	padding: 25px;
+  }
+}
+
+.meta-data-container h1 {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: Lato,sans-serif;
+	font-size: 2.2em;
+}
+
+@media (min-width:768px){
+  .meta-data-container h1 {
+  	font-size: 2.5em;
+  }
+}
+
+
+.cardcont {
+	border-radius: 3px;
+	background: rgba(0,0,0,.85);
+  margin-top: 50px;
+  margin-bottom: 50px;
+	/* background-image: -moz-linear-gradient(rgba(0,0,0,.85) 15%,rgba(0,0,0,.2) 40%,#000 90%); */
+	-webkit-animation: fadein ease-out 1.4s;
+	animation: fadein ease-out 1.4s;
+}
+
+
+.cardcont p{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.nopadding{
+  padding: 0;
+}
+
+footer {
+	padding: 30px 0;
+	float: left;
+	font-size: .9em;
+	text-align: center;
+	width: 100%;
+	text-shadow: 1px 1px 1px #000;
+}
+
+footer span {
+	display: block;
+	padding: 0 0 10px;
+}
+
+footer a {
+	color: gray;
+	transition: .7s;
+	padding: 8px;
+}
+
+footer span i {
+	margin-right: 5px;
+}
+
+.ion-social-github::before {
+	content: "\f233";
+}
+
+.meta-data-container {
+	padding: 15px;
+	color: #fafafa;
+}
+
+/* Small devices (landscape phones, 544px and up)  */
+@media (min-width: 544px) {
+  .meta-data-container {
+  	padding: 25px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up)  */
+@media (min-width: 768px) {
+  .meta-data-container {
+  	padding: 25px;
+  }
+}
+
+.meta-data-container h1 {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: Lato,sans-serif;
+	font-size: 2.2em;
+}
+
+@media (min-width: 768px) {
+  .meta-data-container h1 {
+  	font-size: 2.5em;
+}
+}
+
+.meta-data-container .additional-details, .tagline {
+	font-family: Oswald,sans-serif;
+}
+
+.meta-data-container .additional-details {
+	margin: 35px 0 20px;
+}
+
+.meta-data-container .additional-details .genre-list {
+	display: block;
+	color: #00fc87;
+	font-size: 1.4em;
+}
+
+.meta-data-container .additional-details .production-list {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.meta-data-container .additional-details .release-details div:nth-child(n+3) {
+	margin-top: 15px;
+}
+
+.col-xs-6 {
+	width: 50%;
+}
+
+.meta-data-container .meta-data {
+	display: block;
+	color: #00fc87;
+	font-size: 1.6em;
+	line-height: 1.1em;
+}
+
+.col-md-8, .col-lg-7{
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.poster-container .poster {
+	width: 100%;
+	border-radius: 0 0 3px 3px;
+}
+
+@media (min-width:768px){
+  .poster-container .poster {
+  	border-radius: 3px 0 0 3px;
+  }
+}
+
+@media (min-width: 768px) {
+.col-md-8 {
+	float: left;
+	width: 66.66%;
+}
+}
+
+@media (min-width: 768px){
+  .col-md-4 {
+	float: left;
+	width: 33.33333%;
+}
+}
+
+@media (min-width:768px) {
+  .push-md-4 {
+  	left: 33.33%;
+  }
+}
+
+
+@media (min-width:992px){
+  .push-lg-5 {
+  	left: 41.66%;
+  }
+}
+
+@media (min-width:992px){
+  .col-lg-5 {
+  	float: left;
+  	width: 41.66667%;
+  }
+}
+
+@media (min-width:992px){
+  .pull-lg-7 {
+	right: 58.33333%;
+}
+}
+
+@media (min-width:768px){
+  .pull-md-8 {
+	right: 66.66667%;
+}
+}
+
+.tagline {
+	display: block;
+	padding-bottom: 0.25em;
+	color: #00fc87;
+	font-size: 1.3em;
+}
+
+@media (min-width:992px){
+  .col-lg-7 {
+  	float: left;
+  	width: 58.33%;
+  }
 }
 
 .movie-video{

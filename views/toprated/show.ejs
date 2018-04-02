@@ -1,41 +1,70 @@
 <% include ../partials/header %>
-  <div id="header">
-    <style>
-      col-lg-12 {
-        color: red;
-        border: 1px solid orange;
-      }
-    </style>
-    <div class="top-nav">
-      <span class="logo"><i class="fa fa-film"></i>Pop<strong>Corn</strong></span>
+
+  <div>
+    <% Movie.backdrop_path = 'https://image.tmdb.org/t/p/original' +Movie.backdrop_path %>
+      <img id="postertest" class="poster" src="<%= Movie.backdrop_path %>">
+  </div>
+  <div class="col-xs-12 cardcont nopadding">
+    <div class="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5">
+      <h1><%= Movie.original_title %></h1>
+      <span class="tagline">
+        <%= Movie.runtime %> min | <%= Movie.genres[0].name %> ,
+          <% if(Movie.genres[1]){ %>
+              <%= Movie.genres[1].name %> |
+                <% } else{ %>
+                  <p>NA</p>
+                  <% } %>
+                    <%= Movie.release_date %>
+                      (
+                      <%= Movie.spoken_languages[0].name %>
+                      )
+      </span>
+      <p>
+        <%= Movie.overview %>
+      </p>
+      <div class="additional-details">
+        <span class="genre-list"></span>
+        <span class="production-list"></span>
+        <div class="nopadding release-details">
+          <div class="col-xs-6">
+            Original Release:
+            <span class="meta-data">2014-11-05</span>
+          </div>
+          <div class="col-xs-6">
+            Running Time:
+            <span class="meta-data">
+  						169 mins
+  				</span>
+          </div>
+          <div class="col-xs-6">
+            Box Office:
+            <span class="meta-data">$675,120,017</span>
+          </div>
+          <div class="col-xs-6">
+            Vote Average:
+            <span class="meta-data">8.1 / 10</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="nav-links" class="top-nav">
-      <ul>
-        <li class="currently_playing"><a href="/nowplaying">Currently Playing</a></li>
-        <li class="popular"><a href="/popular">Popular</a></li>
-        <li class="top_rated active-nav-link"><a href="/toprated">Top Rated</a></li>
-        <li class="upcoming"><a href="/upcoming">Upcoming</a></li>
-      </ul>
-    </div>
-    <div class="search">
-      <input type="text" placeholder="Search Movie">
+    <div class="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7 ">
+      <% Movie.poster_path = 'https://image.tmdb.org/t/p/w500' +Movie.poster_path %>
+        <img class="poster" src="<%= Movie.poster_path %>">
     </div>
   </div>
+  <footer>
+    <span><a href="http://www.stephenkempin.co.uk/" rel="author">Designed &amp; developed by Vaibhav</a> </span>
+    <span><a href="https://github.com/SKempin/reactjs-tmdb-app" title="View Github Repo"><i class="icon ion-social-github"></i>View Code</a></span>
+  </footer>
 
-  <div class="container" id="content">
-    <div class="movie-video">
-      <!-- movie video will render here -->
-      <div><iframe class="youtube" src="https://www.youtube.com/embed/<%= Video.results[0].key %>" allowfullscreen=""></iframe></div>
-    </div>
+  <!-- <div class="container" id="content"> -->
+  <!-- <div class="movie-video"> -->
+  <!-- movie video will render here -->
+  <!-- <div><iframe class="youtube" src="https://www.youtube.com/embed/<%= Video.results[0].key %>" allowfullscreen=""></iframe></div> -->
+  <!-- </div> -->
 
-    <div id="movie-main-summary">
+  <!-- <div id="movie-main-summary">
       <div id="summary-top">
-        <!-- /*<style>
-        .color{
-          background-color: orange;
-          border: 1px solid red;
-        }
-      </style>*/ -->
         <div class="col-lg-8 col-md-8 col-sm-5 col-xs-1 color ">
           <span id="movie-summary-title"><%= Movie.original_title %></span>
           <div class="caption_info">
@@ -104,10 +133,11 @@
         </div>
       </div>
     </div>
-  </div>
-  </div>
+  </div> -->
 
-  <div class="container" id="recommendations">
+  <!-- </div> -->
+
+  <!-- <div class="container" id="recommendations">
     <h2 class="rec_heading">People who liked this also liked... </h2>
     <div class="col-lg-2">
       <% Recommend.results[0].poster_path = 'https://image.tmdb.org/t/p/w500' +Recommend.results[0].poster_path %>
@@ -177,27 +207,28 @@
       <% } %>
   </div>
 
+
   <div class="container" id="slick-slider">
     <div class="slider">
-      <% currRated.results[0].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[0].poster_path %>
-        <div><img src="<%= currRated.results[0].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-        <% currRated.results[1].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[1].poster_path %>
-          <div><img src="<%= currRated.results[1].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-          <% currRated.results[2].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[2].poster_path %>
-            <div><img src="<%= currRated.results[2].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-            <% currRated.results[3].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[3].poster_path %>
-              <div><img src="<%= currRated.results[3].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-              <% currRated.results[4].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[4].poster_path %>
-                <div><img src="<%= currRated.results[4].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-                <% currRated.results[5].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[5].poster_path %>
-                  <div><img src="<%= currRated.results[5].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-                  <% currRated.results[6].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[6].poster_path %>
-                    <div><img src="<%= currRated.results[6].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-                    <% currRated.results[7].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[7].poster_path %>
-                      <div><img src="<%= currRated.results[7].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-                      <% currRated.results[8].poster_path = 'https://image.tmdb.org/t/p/w500' +currRated.results[8].poster_path %>
-                        <div><img src="<%= currRated.results[8].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
-    </div>
-  </div>
+      <% currPlaying.results[0].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[0].poster_path %>
+        <div><img src="<%= currPlaying.results[0].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+        <% currPlaying.results[1].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[1].poster_path %>
+          <div><img src="<%= currPlaying.results[1].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+          <% currPlaying.results[2].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[2].poster_path %>
+            <div><img src="<%= currPlaying.results[2].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+            <% currPlaying.results[3].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[3].poster_path %>
+              <div><img src="<%= currPlaying.results[3].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+              <% currPlaying.results[4].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[4].poster_path %>
+                <div><img src="<%= currPlaying.results[4].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+                <% currPlaying.results[5].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[5].poster_path %>
+                  <div><img src="<%= currPlaying.results[5].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+                  <% currPlaying.results[6].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[6].poster_path %>
+                    <div><img src="<%= currPlaying.results[6].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+                    <% currPlaying.results[7].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[7].poster_path %>
+                      <div><img src="<%= currPlaying.results[7].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+                      <% currPlaying.results[8].poster_path = 'https://image.tmdb.org/t/p/w500' +currPlaying.results[8].poster_path %>
+                        <div><img src="<%= currPlaying.results[8].poster_path %>" alt="" class="img-responsive" id="movie-summary-img"></div>
+    </div> -->
+  <!-- </div> -->
 
   <% include ../partials/footer %>
