@@ -203,16 +203,339 @@ a:focus, a:hover {
   }
 }
 
+.btn-red{
+  color: #fff;
+  background-color: #e50914;
+  box-shadow: 0 1px 0 rgba(0,0,0,.45);
+  position: relative;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  margin: 1em auto;
+  padding: 1em 2em;
+  /* margin-left: 38px; */
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1em;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  box-sizing: border-box;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn-green{
+  color: #fff;
+  background-color: #00fc87;
+  box-shadow: 0 1px 0 rgba(0,0,0,.45);
+  position: relative;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  margin: 1em auto;
+  padding: 1em 2em;
+  /* margin-left: 38px; */
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1em;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  box-sizing: border-box;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.btn-red,
+.btn-red::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-green,
+.btn-green::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+.btn-red::before,
+.btn-red::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.btn-green::before,
+.btn-green::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+
+.btn-red:hover {
+  color: #e50914;
+}
+
+.btn-green:hover {
+  color: #00fc87;
+}
+
+.btn-red::after{
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn-green::after{
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+
+.btn-red:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+.btn-green:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+
+.wrapper {
+  padding: 100px;
+}
+
+.image--cover {
+  width: 117px;
+  height: 110px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  margin: 20px;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.responsive-circle {
+	font-weight: 700;
+	/* margin: 0 auto 20px; */
+	width: 80%;
+}
+
+.responsive-circle div{
+  text-align: center;
+}
+
+@media (max-width:768px){
+  .responsive-circle {
+	width: 100%;
+}
+
+.responsive-circle div {
+	color: white;
+  /* justify-content: center; */
+	line-height: 1em;
+	margin-top: -0.5em;
+	padding-top: 10%;
+	text-align: center;
+	width: 100%;
+}
+
+}
+
+@media (max-width:992px){
+  .responsive-circle {
+	width: 100%;
+}
+
+.responsive-circle div {
+	color: white;
+  /* justify-content: center; */
+	line-height: 1em;
+	margin-top: -0.5em;
+	padding-top: 10%;
+	text-align: center;
+	width: 100%;
+}
+
+}
+
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px){
+    .fivecolumns .span2 {
+        width: 18.297872340425532%;
+        *width: 18.2234042553191494%;
+    }
+}
+@media (min-width: 1200px) {
+    .fivecolumns .span2 {
+        width: 17.9487179487179488%;
+        *width: 17.87424986361156592%;
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .fivecolumns .span2 {
+        width: 17.79005524861878448%;
+        *width: 17.7155871635124022%;
+    }
+}
+
+.wrapper h3{
+  font-size: 2em;
+  letter-spacing: .75vh;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: Lato,sans-serif;
+  color: #fafafa;
+  margin-bottom: 20px;
+
+}
+
+figcaption{
+  color: #00fc87;
+  text-transform: uppercase;
+  font-family:  Oswald,sans-serif;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.wrapper .col-md-3{
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: .5;
+}
+
+#myModal .modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+      height: auto;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 745px;
+    margin: 10px auto;
+  }
+}
+
+
+#myModal .modal-body {
+  position:relative;
+  padding:0px;
+}
+
+#myModal .close {
+  position:absolute;
+  right:-30px;
+  top:0;
+  z-index:999;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
+}
+
+.wrapper .col-md-3:hover{
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+  cursor: pointer;
+  opacity: 1;
+}
+
 
 .cardcont {
 	border-radius: 3px;
 	background: rgba(0,0,0,.85);
   margin-top: 50px;
   margin-bottom: 50px;
-	/* background-image: -moz-linear-gradient(rgba(0,0,0,.85) 15%,rgba(0,0,0,.2) 40%,#000 90%); */
-	-webkit-animation: fadein ease-out 1.4s;
-	animation: fadein ease-out 1.4s;
-}
+  -webkit-animation: fadein ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein ease-out 2s; /* Firefox < 16 */
+  -ms-animation: fadein ease-out 2s; /* Internet Explorer */
+  -o-animation: fadein ease-out 2s; /* Opera < 12.1 */
+  animation: fadein ease-out 2s;
+  }
+
+  @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
 
 
 .cardcont p{
@@ -309,7 +632,7 @@ footer span i {
 	margin-top: 15px;
 }
 
-.col-xs-6 {
+.col-xs-6{
 	width: 50%;
 }
 
@@ -355,6 +678,24 @@ footer span i {
 @media (min-width:768px) {
   .push-md-4 {
   	left: 33.33%;
+  }
+}
+
+@media (min-width:544px) {
+  .col-xs-3 {
+    float: left;
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+@media (min-width:768px) {
+  .col-xs-3 {
+    float: left;
+    display: block;
+    height: auto;
+    max-width: 100%;
   }
 }
 

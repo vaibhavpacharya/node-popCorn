@@ -41,7 +41,6 @@ router.get("/",function(req,res){
 //SHOW- Show info about one movie
 router.get("/:id",function(req,res){
   var ID = req.params.id;
-  console.log(ID);
   var movieInfobyTitle = urls.movieInfobyTitle +apiKey+ '&query=' +ID;
 
   request(movieInfobyTitle, function(err,foundMovie){
@@ -61,7 +60,7 @@ router.get("/:id",function(req,res){
               console.log(err);
             } else {
               var info  = JSON.parse(singleMovie.body);
-              // console.log(info);
+              console.log(info);
               request(youtube, function(err, movieVideo){
                 if(err){
                   console.log(err);

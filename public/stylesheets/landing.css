@@ -94,6 +94,31 @@ a:focus, a:hover {
   overflow: hidden;
 }
 
+.btn-green{
+  color: #fff;
+  background-color: #00fc87;
+  box-shadow: 0 1px 0 rgba(0,0,0,.45);
+  position: relative;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  margin: 1em auto;
+  padding: 1em 3em;
+  margin-left: 38px;
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1em;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  box-sizing: border-box;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
 .btn-red,
 .btn-red::after {
   -webkit-transition: all 0.3s;

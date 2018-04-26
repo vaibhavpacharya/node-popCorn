@@ -33,7 +33,7 @@ router.get("/",function(req,res){
           }
           else{
             var movieData = JSON.parse(body);
-            console.log(movieData);
+            // console.log(movieData);
             res.render("toprated/index",{movieData: movieData});
           }
   });
