@@ -2,6 +2,7 @@ var express     = require("express"),
     router      = express.Router(),
     moment      = require('moment'),
     request     = require("request"),
+    fetch       = require("node-fetch"),
     bodyParser  = require("body-parser");
 
 var apiKey      = '0eb48fbecf1e41443e5deadaea7521f7';
@@ -23,88 +24,80 @@ var imgSize     = {
                 };
 
 // Index Route
-router.get("/",function(req,res){
-    var nowPlaying = urls.nowPlaying +apiKey;
-    // load initial main movie
-        request(nowPlaying, function(err,response,body){
-          if(err){
-            console.log(err);
-          }
-          else{
-            var movieData = JSON.parse(body);
-            // console.log(movieData);
-            res.render("nowplaying/index",{movieData: movieData});
-          }
-  });
-});
-
-//SHOW- Show info about one movie
-router.get("/:id",function(req,res){
-  var ID = req.params.id;
-  var movieInfobyTitle = urls.movieInfobyTitle +apiKey+ '&query=' +ID;
-
-  request(movieInfobyTitle, function(err,foundMovie){
-    if(err){
-      console.log(err);
-    }else{
-      //render the show page
-      var body = JSON.parse(foundMovie.body);
-      var singleMovieInfo    = urls.singleMovieInfo +body.results[0].id+'?api_key='+apiKey;
-      var singleMovieCredits = urls.singleMovieInfo +body.results[0].id+'/credits?api_key='+apiKey;
-      var nowPlaying         = urls.nowPlaying +apiKey;
-      var youtube            = 'http://api.themoviedb.org/3/movie/' +body.results[0].id+ '/videos?api_key='+apiKey+'&language=en-US';
-      var recommendations    = 'https://api.themoviedb.org/3/movie/' +body.results[0].id+ '/recommendations?api_key='+apiKey+'&language=en-US&page=1';
-
-      request(singleMovieInfo, function(err, singleMovie){
-            if(err){
-              console.log(err);
-            } else {
-              var info  = JSON.parse(singleMovie.body);
-              console.log(info);
-              request(youtube, function(err, movieVideo){
-                if(err){
-                  console.log(err);
-                } else {
-                  var video = JSON.parse(movieVideo.body);
-                  // console.log(video);
-                  request(singleMovieCredits, function(err, movieCredits){
-                  if(err){
-                    console.log(err);
-                  } else{
-                    var credit = JSON.parse(movieCredits.body)
-                    // console.log(credit);
-                    request(recommendations, function(err, movieRecommendations){
-                      if(err){
-                        console.log(err);
-                      } else {
-                        var recommend = JSON.parse(movieRecommendations.body)
-                        // console.log(recommend);
-                            request(nowPlaying, function(err, moviePlaying){
-                            if(err){
-                              console.log(err);
-                            } else {
-                              var currPlaying = JSON.parse(moviePlaying.body);
-                              // console.log(currPlaying);
-                              res.render("nowplaying/show",{
-                                Movie: info,
-                                Video: video,
-                                Credit: credit,
-                                Recommend: recommend,
-                                currPlaying: currPlaying,
-                                layout:false,
-                                session: req.session
-                              });
-                          }
-                      });
-                    }
-                  });
-                }
-              });
-            }
-          });
-        }
-      });
+router.get('/', async(req,res) => {
+    try {
+      let nowPlaying    = urls.nowPlaying +apiKey;
+        const response  = await fetch(nowPlaying);
+        let movieData   = await response.json();
+        // console.log(movieData);
+          res.render("nowplaying/index",{movieData: movieData});
+    } catch (e) {
+      console.log(e);
     }
-  });
 });
+
+// SHOW- Show info about one movie
+router.get("/:id", async (req,res) => {
+  try {
+    let ID                = req.params.id;
+    let movieInfobyTitle  = urls.movieInfobyTitle +apiKey+ '&query=' +ID;
+      const response      = await fetch(movieInfobyTitle);
+      let foundMovie      = await response.json();
+      // console.log(foundMovie);
+        let singleMovieInfo    = urls.singleMovieInfo +foundMovie.results[0].id+'?api_key='+apiKey;
+        let singleMovieCredits = urls.singleMovieInfo +foundMovie.results[0].id+'/credits?api_key='+apiKey;
+        let nowPlaying         = urls.nowPlaying +apiKey;
+        let youtube            = 'http://api.themoviedb.org/3/movie/' +foundMovie.results[0].id+ '/videos?api_key='+apiKey+'&language=en-US';
+        let recommendations    = 'https://api.themoviedb.org/3/movie/' +foundMovie.results[0].id+ '/recommendations?api_key='+apiKey+'&language=en-US&page=1';
+          // singleMovieInfo
+          try {
+            const singleMovieRequest  = await fetch(singleMovieInfo);
+            var   info                = await singleMovieRequest.json();
+            console.log(info);
+          } catch (e) {
+            console.log(e);
+          }
+          // youtube
+          try {
+            const YoutubeRequest  = await fetch(youtube);
+            var   video           = await YoutubeRequest.json();
+          } catch (e) {
+            console.log(e);
+          }
+          // singleMovieCredits
+          try {
+            const singleMovieCreditsRequest = await fetch(singleMovieCredits);
+            var   credit                    = await singleMovieCreditsRequest.json();
+          } catch (e) {
+            console.log(e);
+          }
+          //recommendations
+          try {
+              const recommendationsRequest  = await fetch(recommendations);
+              var   recommend               = await recommendationsRequest.json();
+          } catch (e) {
+            console.log(e);
+          }
+          //currPlaying
+          try {
+              const nowPlayingRequest       = await fetch(nowPlaying);
+              var currPlaying               = await nowPlayingRequest.json();
+          } catch (e) {
+            console.log(e);
+          }
+          res.render("nowplaying/show",{
+            Movie: info,
+            Video: video,
+            Credit: credit,
+            Recommend: recommend,
+            currPlaying: currPlaying,
+            layout:false,
+            session: req.session
+  });
+}
+    catch (e) {
+    console.log(e)
+  }
+});
+
 module.exports = router;

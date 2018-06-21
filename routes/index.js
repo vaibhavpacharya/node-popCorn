@@ -4,8 +4,18 @@ var express     = require("express"),
     request     = require("request"),
     bodyParser  = require("body-parser");
 
-    // Root Route
-    router.get("/", function(req,res){
-      res.render("index/landing");
+//     // Root Route
+//     router.get("/", function(req,res){
+// });
+//Root Route
+
+router.get('/', async (req, res, next) => {
+  try {
+    res.render("index/landing");
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
+
 module.exports = router;

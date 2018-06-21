@@ -16,6 +16,7 @@
     "moment": "^2.18.1",
     "mongoose": "^4.10.8",
     "morgan": "^1.8.2",
+    "node-fetch": "^2.1.2",
     "nodemon": "^1.11.0",
     "request": "^2.81.0"
   }
