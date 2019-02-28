@@ -50,7 +50,7 @@
         <div class="thumbnail">
           <% movie.poster_path = 'https://image.tmdb.org/t/p/w370_and_h556_bestv2' +movie.poster_path %>
             <a href="/nowplaying/<%= movie.title %>">
-            <img src="<%= movie.poster_path %>">
+            <img class="lozad" data-src="<%= movie.poster_path %>">
           </a>
             <div class="caption">
               <h4><%= movie.title %></h4>
