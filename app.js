@@ -41,6 +41,6 @@ var express     = require("express"),
     app.use("/toprated", topratedRoutes);
     app.use("/upcoming", upcomingRoutes);
 
-    app.listen(process.env.PORT || 8080,function(){
-      console.log("The Popcorn App server has started on port 8080!");
+    app.listen(process.env.PORT || 3000,function(){
+      console.log("The Popcorn App server has started on port 3000!");
 });

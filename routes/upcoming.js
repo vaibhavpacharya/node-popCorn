@@ -32,7 +32,7 @@ router.get("/", async(req,res) => {
     let movieData   = await response.json();
     res.render("upcoming/index",{movieData: movieData});
   } catch (e) {
-    console.log(e);
+    throw e;
   }
 });
 
@@ -44,7 +44,6 @@ router.get("/:id", async (req,res) => {
     let movieInfobyTitle  = urls.movieInfobyTitle +apiKey+ '&query=' +ID;
       const response      = await fetch(movieInfobyTitle);
       let foundMovie      = await response.json();
-      // console.log(foundMovie);
         let singleMovieInfo    = urls.singleMovieInfo +foundMovie.results[0].id+'?api_key='+apiKey;
         let singleMovieCredits = urls.singleMovieInfo +foundMovie.results[0].id+'/credits?api_key='+apiKey;
         let upcoming           = urls.upcoming +apiKey;
@@ -54,37 +53,36 @@ router.get("/:id", async (req,res) => {
           try {
             const singleMovieRequest  = await fetch(singleMovieInfo);
             var   info                = await singleMovieRequest.json();
-            console.log(info);
           } catch (e) {
-            console.log(e);
+            throw e;
           }
           // youtube
           try {
             const YoutubeRequest  = await fetch(youtube);
             var   video           = await YoutubeRequest.json();
           } catch (e) {
-            console.log(e);
+            throw e;
           }
           // singleMovieCredits
           try {
             const singleMovieCreditsRequest = await fetch(singleMovieCredits);
             var   credit                    = await singleMovieCreditsRequest.json();
           } catch (e) {
-            console.log(e);
+            throw e;
           }
           //recommendations
           try {
               const recommendationsRequest  = await fetch(recommendations);
               var   recommend               = await recommendationsRequest.json();
           } catch (e) {
-            console.log(e);
+            throw e;
           }
           //toprated
           try {
               const currUpcomingRequest      = await fetch(upcoming);
               var currUpcoming         = await currUpcomingRequest.json();
           } catch (e) {
-            console.log(e);
+            throw e;
           }
           res.render("upcoming/show",{
             Movie: info,
@@ -97,8 +95,8 @@ router.get("/:id", async (req,res) => {
   });
 }
     catch (e) {
-    console.log(e)
-  }
+      throw e;
+    }
 });
 
 module.exports = router;
