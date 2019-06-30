@@ -9,4 +9,12 @@ window.onload=function(){
   slidesToShow:6,
   slidesToScroll:1
   });
+
+// Initialize library
+lozad('.lozad', {
+  load: function(el) {
+      el.src = el.dataset.src;
+  }
+}).observe()
 };
+
