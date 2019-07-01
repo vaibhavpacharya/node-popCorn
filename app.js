@@ -1,46 +1,51 @@
-var express     = require("express"),
-    app         = express(),
-    moment      = require('moment'),
-    request     = require("request"),
-    bodyParser  = require("body-parser")
-    compression = require('compression'),
-    minifyHTML  = require('express-minify-html');
+const express = require('express');
 
-    app.set("view engine","ejs");
-    app.use(express.static(__dirname + "/public"));
-    app.set('views', __dirname + '/views');
-    app.use(bodyParser.urlencoded({ extended: true }));
+const app = express();
+const moment = require('moment');
+const request = require('request');
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const minifyHTML = require('express-minify-html');
 
-    // compress all responses
-    app.use(compression())
+app.set('view engine', 'ejs');
+app.use(express.static(`${__dirname}/public`));
+app.set('views', `${__dirname}/views`);
+app.use(bodyParser.urlencoded({ extended: true }));
 
-    // express-minify-html
-    app.use(minifyHTML({
-      override:      true,
-      exception_url: false,
-      htmlMinifier: {
-          removeComments:            true,
-          collapseWhitespace:        true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes:     true,
-          removeEmptyAttributes:     true,
-          minifyJS:                  true
-      }
-  }));
+// compress all responses
+app.use(compression());
 
-    //requiring routes
-    var indexRoutes     = require("./routes/index"),
-        moviesRoutes    = require("./routes/nowplaying"),
-        popularRoutes   = require("./routes/popular"),
-        topratedRoutes  = require("./routes/toprated"),
-        upcomingRoutes  = require("./routes/upcoming");
+// express-minify-html
+app.use(
+  minifyHTML({
+    override: true,
+    exception_url: false,
+    htmlMinifier: {
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true,
+      minifyJS: true,
+    },
+  })
+);
 
-    app.use("/", indexRoutes);
-    app.use("/nowplaying", moviesRoutes);
-    app.use("/popular", popularRoutes);
-    app.use("/toprated", topratedRoutes);
-    app.use("/upcoming", upcomingRoutes);
+// requiring routes
+const indexRoutes = require('./routes/index');
+const moviesRoutes = require('./routes/nowplaying');
+const popularRoutes = require('./routes/popular');
+const topratedRoutes = require('./routes/toprated');
+const upcomingRoutes = require('./routes/upcoming');
 
-    app.listen(process.env.PORT || 3000,function(){
-      console.log("The Popcorn App server has started on port 3000!");
+app.use('/', indexRoutes);
+app.use('/nowplaying', moviesRoutes);
+app.use('/popular', popularRoutes);
+app.use('/toprated', topratedRoutes);
+app.use('/upcoming', upcomingRoutes);
+
+app.listen(process.env.PORT || 3000, function() {
+  console.log('The Popcorn App server has started on port 3000!');
 });
+
+module.exports = app;
