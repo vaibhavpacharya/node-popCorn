@@ -19,7 +19,7 @@
     "express": "^4.15.4",
     "express-minify-html": "^0.12.0",
     "moment": "^2.18.1",
-    "mongoose": "^4.10.8",
+    "mongoose": "^5.7.5",
     "morgan": "^1.8.2",
     "node-fetch": "^2.1.2",
     "nodemon": "^1.11.0",
