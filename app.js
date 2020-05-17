@@ -1,8 +1,6 @@
 const express = require('express');
 
 const app = express();
-const moment = require('moment');
-const request = require('request');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const minifyHTML = require('express-minify-html');
@@ -11,6 +9,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(`${__dirname}/public`));
 app.set('views', `${__dirname}/views`);
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const port = process.env.PORT || 3000;
 
 // compress all responses
 app.use(compression());
@@ -44,8 +44,8 @@ app.use('/popular', popularRoutes);
 app.use('/toprated', topratedRoutes);
 app.use('/upcoming', upcomingRoutes);
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log('The Popcorn App server has started on port 3000!');
+app.listen(port, () => {
+  console.log(`server running at ${port}`);
 });
 
 module.exports = app;
