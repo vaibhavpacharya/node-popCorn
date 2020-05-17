@@ -9,11 +9,9 @@
   </a>
 </p>
 
-> Simple Movie,TV App
+> Simple Movie Review App
 
 ### 🏠 [Homepage](https://popcorn-film.herokuapp.com/)
-
-### ✨ [Demo](https://popcorn-film.herokuapp.com/)
 
 ## Install
 
