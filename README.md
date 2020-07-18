@@ -32,6 +32,10 @@ npm run start
 ```sh
 npm run test
 ```
+## Built With
+
+* [Node.js](https://docs.npmjs.com/) - The JavaScript Runtime used
+* [BootStrap](https://getbootstrap.com/) -  The CSS framework
 
 ## Author
 
@@ -51,3 +55,4 @@ Give a ⭐️ if this project helped you!
 </a>
 
 ***
+
