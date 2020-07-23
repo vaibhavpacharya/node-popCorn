@@ -15,6 +15,19 @@
 
 ### ✨ [Demo](https://popcorn-film.herokuapp.com/)
 ![Screenshot](https://github.com/vaibhavpacharya/node-popCorn/blob/master/Screenshot%20(2).png)
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Installation](#install)
+* [Contact](#author)
+
+## About The Project
+
+There are many great online database of information related to films, television programs, home videos, video games, available on internet, however, I didn't find one that really suit my needs, they are cluttered and contain advertisements and provide bloated information. 
+So I created this enhanced and simple one. Its UI is inspired by Netflix homepage.
 ## Install
 
 ```sh
@@ -55,4 +68,3 @@ Give a ⭐️ if this project helped you!
 </a>
 
 ***
-
