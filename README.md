@@ -14,7 +14,7 @@
 ### 🏠 [Homepage](https://popcorn-film.herokuapp.com/)
 
 ### ✨ [Demo](https://popcorn-film.herokuapp.com/)
-![Screenshot](https://github.com/vaibhavpacharya/node-popCorn/blob/master/Screenshot%20(2).png)
+![Screenshot](https://github.com/vaibhavpacharya/node-popCorn/blob/master/screenshot.png)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
