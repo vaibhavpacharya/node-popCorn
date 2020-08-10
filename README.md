@@ -4,6 +4,12 @@
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
+    <a href="#" target="_blank">
+    <img alt="Code Inspector Score" src="https://www.code-inspector.com/project/12103/score/svg" />
+  </a>
+      <a href="#" target="_blank">
+    <img alt="Code Inspector Grade" src="https://www.code-inspector.com/project/12103/status/svg" />
+  </a>
   <a href="https://twitter.com/IAmVaibhav1993" target="_blank">
     <img alt="Twitter: IAmVaibhav1993" src="https://img.shields.io/twitter/follow/IAmVaibhav1993.svg?style=social" />
   </a>
