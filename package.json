@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "chromedriver": "^81.0.0",
+    "chromedriver": "^87.0.3",
     "compression": "^1.7.3",
     "ejs": "^2.5.7",
     "express": "^4.17.1",
