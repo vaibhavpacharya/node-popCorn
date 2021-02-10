@@ -15,7 +15,7 @@
     "body-parser": "^1.19.0",
     "chromedriver": "^81.0.0",
     "compression": "^1.7.3",
-    "ejs": "^2.5.7",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-minify-html": "^0.12.0",
     "mongoose": "^5.9.14",
