@@ -15,7 +15,7 @@
     "body-parser": "^1.19.0",
     "compression": "^1.7.3",
     "express": "^4.17.1",
-    "express-minify-html": "^0.10.0",
+    "express-minify-html": "^0.11.3",
     "node-fetch": "^2.1.2",
     "ejs": "^3.1.7"
   },
